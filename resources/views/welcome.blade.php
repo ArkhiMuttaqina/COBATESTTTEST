@@ -893,9 +893,9 @@
     <script type="text/javascript">
 
 
-        function generateSegitiga() {
 
-        function generateBilGanjil() {
+
+        function generateSegitiga() {
             var angka = $("#angka").val();
 
             if(angka == null){
@@ -984,7 +984,7 @@
                     }
                 });
         }
-        }
+        
     </script>
 
 </body>
