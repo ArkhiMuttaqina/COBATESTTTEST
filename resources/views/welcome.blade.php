@@ -893,38 +893,37 @@
     <script type="text/javascript">
 
 
+        function generateSegitiga() {
 
+        function generateBilGanjil() {
+            var angka = $("#angka").val();
 
-function generateSegitiga() {
-        var angka = $("#angka").val();
-
-        if(angka == null){
-        alert('masih Kosong');
-        return false;
-        }
-        var dataarray = new FormData();
-        var CSRF_TOKEN = "{{ csrf_token() }}";
-        dataarray.append('angka', angka);
-        dataarray.append('_token', CSRF_TOKEN);
-        $.ajax({
-        url: "
-        <?= url('generateSegitiga') ?>",
-        method: "post",
-        data: dataarray,
-        dataType: 'json',
-        contentType: false,
-        cache: false,
-        processData: false,
-        type: 'post',
-        success: function(data) {
-        if(data.isSuccess == 'yes'){
-        alert(data.msg);
-        }else{
-        alert(data.msg);
-        }
-        console.log(data)
-        }
-        });
+            if(angka == null){
+                alert('masih Kosong');
+                return false;
+            }
+            var dataarray = new FormData();
+            var CSRF_TOKEN = "{{ csrf_token() }}";
+            dataarray.append('angka', angka);
+            dataarray.append('_token', CSRF_TOKEN);
+                $.ajax({
+                    url: "<?= url('generateBilGanjil') ?>",
+                    method: "post",
+                    data: dataarray,
+                    dataType: 'json',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    type: 'post',
+                    success: function(data) {
+                        if(data.isSuccess == 'yes'){
+                             alert(data.msg);
+                        }else{
+                            alert(data.msg);
+                        }
+                      console.log(data)
+                    }
+                });
         }
         function generateBilGanjil() {
             var angka = $("#angka").val();
@@ -984,6 +983,7 @@ function generateSegitiga() {
                       console.log(data)
                     }
                 });
+        }
         }
     </script>
 
